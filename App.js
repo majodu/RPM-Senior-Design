@@ -31,18 +31,15 @@ import {
 const {RpmPeerToPeer} = NativeModules;
 const EvntEmitter = new NativeEventEmitter(RpmPeerToPeer);
 
-// const
-
+const subTestEvent = EvntEmitter.addListener('TestEvent', reminder => {
+  console.log(reminder.event);
+});
 class App extends Component {
   state = {
     counter: 0,
   };
-  subscription = EvntEmitter.addListener('TestEvent', reminder => {
-    console.log(reminder.event);
-    this.increment();
-  });
   componentWillUnmount() {
-    this.subscription.remove();
+    subTestEvent.remove();
   }
   increment = () => {
     this.setState({
@@ -72,7 +69,6 @@ class App extends Component {
                     // Alert.alert('whoa');
                     RpmPeerToPeer.sampleMethod('DOF');
                     // this.increment();
-                    console.log('btw you are a bitch');
                   }}
                 />
                 <Text>{counter}</Text>
