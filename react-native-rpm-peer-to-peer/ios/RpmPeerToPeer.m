@@ -94,7 +94,16 @@ RCT_EXPORT_METHOD(disconnect:(RCTResponseSenderBlock)callback) {
 }
 
 - (void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info {
-  if ([peerID.displayName isEqualToString:self.peerID.displayName]) return;
+    if ([peerID.displayName isEqualToString:self.peerID.displayName]){
+      [self sendEventWithName:@"RCTMultipeerConnectivityPeerFound"
+      body:@{
+        @"peer": @{
+          @"id": peerID.displayName,
+          @"info": info
+        }
+      }];
+      return;
+    }
   [self.peers setValue:peerID forKey:peerID.displayName];
   if (info == nil) {
     info = [NSDictionary dictionary];

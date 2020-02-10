@@ -34,12 +34,65 @@ const EvntEmitter = new NativeEventEmitter(RpmPeerToPeer);
 const subTestEvent = EvntEmitter.addListener('TestEvent', reminder => {
   console.log(reminder.event);
 });
+const subDataRecieved = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityDataReceived',
+  body => {
+    console.log(body);
+  },
+);
+const subPeerDisconnect = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityPeerDisconnected',
+  body => {
+    console.log(body);
+  },
+);
+const subPeerConnecting = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityPeerConnecting',
+  body => {
+    console.log(body);
+  },
+);
+const subPeerConnected = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityPeerConnected',
+  body => {
+    console.log(body);
+  },
+);
+const subInviteRecieved = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityInviteReceived',
+  body => {
+    console.log(body);
+  },
+);
+const subPeerLost = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityPeerLost',
+  body => {
+    console.log(body);
+  },
+);
+const subPeerFound = EvntEmitter.addListener(
+  'RCTMultipeerConnectivityPeerFound',
+  body => {
+    console.log(body);
+  },
+);
+
 class App extends Component {
   state = {
     counter: 0,
   };
+  componentDidMount() {
+    RpmPeerToPeer.advertise('test', {data: 'hi'});
+  }
   componentWillUnmount() {
     subTestEvent.remove();
+    subDataRecieved.remove();
+    subInviteRecieved.remove();
+    subPeerConnected.remove();
+    subPeerConnecting.remove();
+    subPeerDisconnect.remove();
+    subPeerFound.remove();
+    subPeerLost.remove();
   }
   increment = () => {
     this.setState({
@@ -64,10 +117,11 @@ class App extends Component {
             <View style={styles.body}>
               <View style={styles.sectionContainer}>
                 <Button
-                  title="Press Me"
+                  title="Advertise"
                   onPress={() => {
                     // Alert.alert('whoa');
-                    RpmPeerToPeer.sampleMethod('DOF');
+                    RpmPeerToPeer.browse('test');
+                    RpmPeerToPeer.sampleMethod('Test Notif');
                     // this.increment();
                   }}
                 />
