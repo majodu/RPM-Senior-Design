@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React from 'react';
+import React, {Component} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,6 +14,10 @@ import {
   View,
   Text,
   StatusBar,
+  NativeModules,
+  Button,
+  Alert,
+  NativeEventEmitter,
 } from 'react-native';
 
 import {
@@ -24,54 +28,86 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App: () => React$Node = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
-  );
-};
+const {RpmPeerToPeer} = NativeModules;
+const EvntEmitter = new NativeEventEmitter(RpmPeerToPeer);
 
+// const
+
+class App extends Component {
+  state = {
+    counter: 0,
+  };
+  subscription = EvntEmitter.addListener('TestEvent', reminder => {
+    console.log(reminder.event);
+    this.increment();
+  });
+  componentWillUnmount() {
+    this.subscription.remove();
+  }
+  increment = () => {
+    this.setState({
+      counter: this.state.counter + 1,
+    });
+  };
+  render() {
+    const counter = this.state.counter;
+    return (
+      <>
+        <StatusBar barStyle="dark-content" />
+        <SafeAreaView>
+          <ScrollView
+            contentInsetAdjustmentBehavior="automatic"
+            style={styles.scrollView}>
+            <Header />
+            {global.HermesInternal == null ? null : (
+              <View style={styles.engine}>
+                <Text style={styles.footer}>Engine: Hermes</Text>
+              </View>
+            )}
+            <View style={styles.body}>
+              <View style={styles.sectionContainer}>
+                <Button
+                  title="Press Me"
+                  onPress={() => {
+                    // Alert.alert('whoa');
+                    RpmPeerToPeer.sampleMethod('DOF');
+                    // this.increment();
+                    console.log('btw you are a bitch');
+                  }}
+                />
+                <Text>{counter}</Text>
+                <Text style={styles.sectionTitle}>Step One</Text>
+                <Text style={styles.sectionDescription}>
+                  Edit <Text style={styles.highlight}>App.js</Text> to change
+                  this screen and then come back to see your edits.
+                </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>See Your Changes</Text>
+                <Text style={styles.sectionDescription}>
+                  <ReloadInstructions />
+                </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Debug</Text>
+                <Text style={styles.sectionDescription}>
+                  <DebugInstructions />
+                </Text>
+              </View>
+              <View style={styles.sectionContainer}>
+                <Text style={styles.sectionTitle}>Learn More</Text>
+                <Text style={styles.sectionDescription}>
+                  Read the docs to discover what to do next:
+                </Text>
+              </View>
+              <LearnMoreLinks />
+            </View>
+          </ScrollView>
+        </SafeAreaView>
+      </>
+    );
+  }
+}
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: Colors.lighter,

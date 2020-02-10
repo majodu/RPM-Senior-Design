@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RPM_BodyCamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPM_BodyCamTests.m */; };
+		118BC8FBE803B14748F18A89 /* libPods-RPM_BodyCamTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F68B3C8C6584D291D82F161D /* libPods-RPM_BodyCamTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		15350182365869E35CAF3B5B /* libPods-RPM_BodyCam-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD269C91EB9AE43CAC2E3236 /* libPods-RPM_BodyCam-tvOSTests.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* RPM_BodyCamTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RPM_BodyCamTests.m */; };
-		A3AF6F2A22FA920B6896468E /* libPods-RPM_BodyCam-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D75FBB1C00FB83DDCDCA41F5 /* libPods-RPM_BodyCam-tvOSTests.a */; };
-		C65F66F759461DD6CB2F513E /* libPods-RPM_BodyCam-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 032A6D0747618BA690D26CAE /* libPods-RPM_BodyCam-tvOS.a */; };
-		D49DC8BB4B9271C41E31CDEF /* libPods-RPM_BodyCam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CC8B3572DD9401CD398E3D /* libPods-RPM_BodyCam.a */; };
-		E42695D16CCB14583B0AC107 /* libPods-RPM_BodyCamTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 421345767923D932180A07B8 /* libPods-RPM_BodyCamTests.a */; };
+		5AA9235E7EBD8C1825C19AF0 /* libPods-RPM_BodyCam.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCA55131751873F26F34E9A /* libPods-RPM_BodyCam.a */; };
+		FD780A6F53BB00B331364B68 /* libPods-RPM_BodyCam-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E5BE5A3A5B9C0E338033141 /* libPods-RPM_BodyCam-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,9 +44,9 @@
 		00E356EE1AD99517003FC87E /* RPM_BodyCamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPM_BodyCamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RPM_BodyCamTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RPM_BodyCamTests.m; sourceTree = "<group>"; };
-		032A6D0747618BA690D26CAE /* libPods-RPM_BodyCam-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCam-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		04AD87160F9A2DD936E7321B /* Pods-RPM_BodyCam-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOS/Pods-RPM_BodyCam-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		0A644ED45ABA131FDA30A631 /* Pods-RPM_BodyCam-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOS/Pods-RPM_BodyCam-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		0BCA55131751873F26F34E9A /* libPods-RPM_BodyCam.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCam.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DB1B84A1474D71978F921EE /* Pods-RPM_BodyCam-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOSTests/Pods-RPM_BodyCam-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1340C754CC7108C8FDA1387D /* Pods-RPM_BodyCam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam/Pods-RPM_BodyCam.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RPM_BodyCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPM_BodyCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RPM_BodyCam/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RPM_BodyCam/AppDelegate.m; sourceTree = "<group>"; };
@@ -54,19 +54,19 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RPM_BodyCam/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RPM_BodyCam/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RPM_BodyCam/main.m; sourceTree = "<group>"; };
-		21CC8B3572DD9401CD398E3D /* libPods-RPM_BodyCam.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCam.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E47B1E0B4A5D006451C7 /* RPM_BodyCam-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RPM_BodyCam-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* RPM_BodyCam-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RPM_BodyCam-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		421345767923D932180A07B8 /* libPods-RPM_BodyCamTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCamTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		45C9DC491E46266A90B578A8 /* Pods-RPM_BodyCamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCamTests.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCamTests/Pods-RPM_BodyCamTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CDA12686659EF9C4D263FB24 /* Pods-RPM_BodyCamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCamTests.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCamTests/Pods-RPM_BodyCamTests.release.xcconfig"; sourceTree = "<group>"; };
-		D75FBB1C00FB83DDCDCA41F5 /* libPods-RPM_BodyCam-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCam-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DFE163C86964E133C7B511D5 /* Pods-RPM_BodyCam-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOSTests/Pods-RPM_BodyCam-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E6C17D6A8D92EE6ABA64EE6E /* Pods-RPM_BodyCam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam/Pods-RPM_BodyCam.release.xcconfig"; sourceTree = "<group>"; };
-		EBFA729EDF104BCB05C41FFD /* Pods-RPM_BodyCam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam/Pods-RPM_BodyCam.debug.xcconfig"; sourceTree = "<group>"; };
+		2D974F56CB4AD63AF50860E4 /* Pods-RPM_BodyCam-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOS/Pods-RPM_BodyCam-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		37DD888090590059765DFE79 /* Pods-RPM_BodyCamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCamTests.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCamTests/Pods-RPM_BodyCamTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A43C1264B4322BA5C3321AB /* Pods-RPM_BodyCam-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOS/Pods-RPM_BodyCam-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		72D2F2E2CF20D5AF9B884B82 /* Pods-RPM_BodyCam-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOSTests/Pods-RPM_BodyCam-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		7D11A00ACC76877D6216608D /* Pods-RPM_BodyCamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCamTests.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCamTests/Pods-RPM_BodyCamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5BE5A3A5B9C0E338033141 /* libPods-RPM_BodyCam-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCam-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD269C91EB9AE43CAC2E3236 /* libPods-RPM_BodyCam-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCam-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0E467622D391F9841E14B77 /* Pods-RPM_BodyCam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam.debug.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam/Pods-RPM_BodyCam.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		ED7EF2BE7751446C74A42AA2 /* Pods-RPM_BodyCam-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RPM_BodyCam-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-RPM_BodyCam-tvOSTests/Pods-RPM_BodyCam-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		F68B3C8C6584D291D82F161D /* libPods-RPM_BodyCamTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RPM_BodyCamTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42695D16CCB14583B0AC107 /* libPods-RPM_BodyCamTests.a in Frameworks */,
+				118BC8FBE803B14748F18A89 /* libPods-RPM_BodyCamTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D49DC8BB4B9271C41E31CDEF /* libPods-RPM_BodyCam.a in Frameworks */,
+				5AA9235E7EBD8C1825C19AF0 /* libPods-RPM_BodyCam.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C65F66F759461DD6CB2F513E /* libPods-RPM_BodyCam-tvOS.a in Frameworks */,
+				FD780A6F53BB00B331364B68 /* libPods-RPM_BodyCam-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3AF6F2A22FA920B6896468E /* libPods-RPM_BodyCam-tvOSTests.a in Frameworks */,
+				15350182365869E35CAF3B5B /* libPods-RPM_BodyCam-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,10 +141,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				21CC8B3572DD9401CD398E3D /* libPods-RPM_BodyCam.a */,
-				032A6D0747618BA690D26CAE /* libPods-RPM_BodyCam-tvOS.a */,
-				D75FBB1C00FB83DDCDCA41F5 /* libPods-RPM_BodyCam-tvOSTests.a */,
-				421345767923D932180A07B8 /* libPods-RPM_BodyCamTests.a */,
+				0BCA55131751873F26F34E9A /* libPods-RPM_BodyCam.a */,
+				8E5BE5A3A5B9C0E338033141 /* libPods-RPM_BodyCam-tvOS.a */,
+				BD269C91EB9AE43CAC2E3236 /* libPods-RPM_BodyCam-tvOSTests.a */,
+				F68B3C8C6584D291D82F161D /* libPods-RPM_BodyCamTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -185,16 +185,15 @@
 		D1565909FDF1640EF755ADD8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EBFA729EDF104BCB05C41FFD /* Pods-RPM_BodyCam.debug.xcconfig */,
-				E6C17D6A8D92EE6ABA64EE6E /* Pods-RPM_BodyCam.release.xcconfig */,
-				04AD87160F9A2DD936E7321B /* Pods-RPM_BodyCam-tvOS.debug.xcconfig */,
-				0A644ED45ABA131FDA30A631 /* Pods-RPM_BodyCam-tvOS.release.xcconfig */,
-				DFE163C86964E133C7B511D5 /* Pods-RPM_BodyCam-tvOSTests.debug.xcconfig */,
-				ED7EF2BE7751446C74A42AA2 /* Pods-RPM_BodyCam-tvOSTests.release.xcconfig */,
-				45C9DC491E46266A90B578A8 /* Pods-RPM_BodyCamTests.debug.xcconfig */,
-				CDA12686659EF9C4D263FB24 /* Pods-RPM_BodyCamTests.release.xcconfig */,
+				E0E467622D391F9841E14B77 /* Pods-RPM_BodyCam.debug.xcconfig */,
+				1340C754CC7108C8FDA1387D /* Pods-RPM_BodyCam.release.xcconfig */,
+				2D974F56CB4AD63AF50860E4 /* Pods-RPM_BodyCam-tvOS.debug.xcconfig */,
+				5A43C1264B4322BA5C3321AB /* Pods-RPM_BodyCam-tvOS.release.xcconfig */,
+				0DB1B84A1474D71978F921EE /* Pods-RPM_BodyCam-tvOSTests.debug.xcconfig */,
+				72D2F2E2CF20D5AF9B884B82 /* Pods-RPM_BodyCam-tvOSTests.release.xcconfig */,
+				7D11A00ACC76877D6216608D /* Pods-RPM_BodyCamTests.debug.xcconfig */,
+				37DD888090590059765DFE79 /* Pods-RPM_BodyCamTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -205,7 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RPM_BodyCamTests" */;
 			buildPhases = (
-				D9AF202AC14DF48A81F5DA69 /* [CP] Check Pods Manifest.lock */,
+				39925925A8679EA9F42F43D9 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -224,7 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RPM_BodyCam" */;
 			buildPhases = (
-				BE34A867E5CE4BFD6B20C949 /* [CP] Check Pods Manifest.lock */,
+				03531433B95300FED2A9C32B /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -244,7 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RPM_BodyCam-tvOS" */;
 			buildPhases = (
-				9020CACBEE7FFF4C4DAF8ECE /* [CP] Check Pods Manifest.lock */,
+				D9B03113C02C4BF014EB67EC /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -264,7 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "RPM_BodyCam-tvOSTests" */;
 			buildPhases = (
-				545E3A53D04C9F6A87FA5A62 /* [CP] Check Pods Manifest.lock */,
+				D5F6A795335538A3753C595A /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -285,7 +284,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -308,6 +307,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -373,65 +373,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Bundle React Native Code And Images";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
-		};
-		545E3A53D04C9F6A87FA5A62 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RPM_BodyCam-tvOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9020CACBEE7FFF4C4DAF8ECE /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RPM_BodyCam-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE34A867E5CE4BFD6B20C949 /* [CP] Check Pods Manifest.lock */ = {
+		03531433B95300FED2A9C32B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -453,7 +395,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D9AF202AC14DF48A81F5DA69 /* [CP] Check Pods Manifest.lock */ = {
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		39925925A8679EA9F42F43D9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,6 +425,50 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RPM_BodyCamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5F6A795335538A3753C595A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RPM_BodyCam-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9B03113C02C4BF014EB67EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RPM_BodyCam-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -580,13 +580,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45C9DC491E46266A90B578A8 /* Pods-RPM_BodyCamTests.debug.xcconfig */;
+			baseConfigurationReference = 7D11A00ACC76877D6216608D /* Pods-RPM_BodyCamTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RPM_BodyCamTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -603,10 +604,11 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDA12686659EF9C4D263FB24 /* Pods-RPM_BodyCamTests.release.xcconfig */;
+			baseConfigurationReference = 37DD888090590059765DFE79 /* Pods-RPM_BodyCamTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RPM_BodyCamTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -623,11 +625,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBFA729EDF104BCB05C41FFD /* Pods-RPM_BodyCam.debug.xcconfig */;
+			baseConfigurationReference = E0E467622D391F9841E14B77 /* Pods-RPM_BodyCam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RPM_BodyCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -643,10 +646,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6C17D6A8D92EE6ABA64EE6E /* Pods-RPM_BodyCam.release.xcconfig */;
+			baseConfigurationReference = 1340C754CC7108C8FDA1387D /* Pods-RPM_BodyCam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = RPM_BodyCam/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -662,7 +666,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04AD87160F9A2DD936E7321B /* Pods-RPM_BodyCam-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 2D974F56CB4AD63AF50860E4 /* Pods-RPM_BodyCam-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -673,6 +677,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "RPM_BodyCam-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -690,7 +695,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0A644ED45ABA131FDA30A631 /* Pods-RPM_BodyCam-tvOS.release.xcconfig */;
+			baseConfigurationReference = 5A43C1264B4322BA5C3321AB /* Pods-RPM_BodyCam-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -701,6 +706,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "RPM_BodyCam-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -718,7 +724,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DFE163C86964E133C7B511D5 /* Pods-RPM_BodyCam-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0DB1B84A1474D71978F921EE /* Pods-RPM_BodyCam-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -728,6 +734,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "RPM_BodyCam-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -745,7 +752,7 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ED7EF2BE7751446C74A42AA2 /* Pods-RPM_BodyCam-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 72D2F2E2CF20D5AF9B884B82 /* Pods-RPM_BodyCam-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -755,6 +762,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "RPM_BodyCam-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
