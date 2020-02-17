@@ -11,20 +11,7 @@
 import React, {Component} from 'react';
 
 // Components
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-  NativeModules,
-  Button,
-  Alert,
-  NativeEventEmitter,
-  Picker,
-} from 'react-native';
-import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
+import {SafeAreaView, StyleSheet, View, Text, Button} from 'react-native';
 
 import {
   Button as BaseButton,
@@ -33,18 +20,11 @@ import {
   Fab as BaseFab,
 } from 'native-base';
 
-// My Components
-import {P2PTest} from './P2PTest';
-
 //Camera Stuff
 import {RNCamera} from 'react-native-camera';
 
 //Routing and navigation
 import 'react-native-gesture-handler';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-
-const Stack = createStackNavigator();
 
 class CameraUI extends Component {
   state = {
@@ -80,9 +60,18 @@ class CameraUI extends Component {
       <>
         <SafeAreaView
           contentInsetAdjustmentBehavior="automatic"
-          style={styles.overlay}>
-          <View style={styles.yav}>
-            <View style={styles.sampleTest}>
+          style={styles.Overlay}>
+          <View style={styles.ButtonContainer}>
+            <View>
+              <BaseButton
+                rounded
+                info
+                style={{width: 100}}
+                onPress={() => this.props.navigation.navigate('P2PTest', {})}>
+                <BaseText> Test P2P </BaseText>
+              </BaseButton>
+            </View>
+            <View style={styles.DataTypeSelectorContainer}>
               <BaseFab
                 active={this.state.active}
                 direction="up"
@@ -91,24 +80,25 @@ class CameraUI extends Component {
                 position="bottomRight"
                 onPress={() => this.setState({active: !this.state.active})}>
                 <BaseIcon name="share" />
-                <Button style={{backgroundColor: '#34A34F'}}>
+                <BaseButton style={{backgroundColor: '#34A34F'}}>
                   <BaseIcon name="logo-whatsapp" />
-                </Button>
-                <Button style={{backgroundColor: '#3B5998'}}>
+                </BaseButton>
+                <BaseButton style={{backgroundColor: '#3B5998'}}>
                   <BaseIcon name="logo-facebook" />
-                </Button>
-                <Button disabled style={{backgroundColor: '#DD5144'}}>
+                </BaseButton>
+                <BaseButton disabled style={{backgroundColor: '#DD5144'}}>
                   <BaseIcon name="mail" />
-                </Button>
+                </BaseButton>
               </BaseFab>
             </View>
           </View>
         </SafeAreaView>
         <SafeAreaView>
-          <Text> Hello There!</Text>
-          <Button
-            title="P2P Test"
-            onPress={() => this.props.navigation.navigate('P2PTest', {})}
+          <RNCamera
+            ref={ref => {
+              this.camera = ref;
+            }}
+            style={styles.Camera}
           />
         </SafeAreaView>
       </>
@@ -117,12 +107,19 @@ class CameraUI extends Component {
 }
 
 const styles = StyleSheet.create({
-  yav: {
+  ButtonContainer: {
     width: '100%',
     height: '100%',
     backgroundColor: 'transparent',
   },
-  sampleTest: {
+  P2PTestContainer: {
+    position: 'absolute',
+    height: 100,
+    width: 150,
+    top: 0,
+    left: 0,
+  },
+  DataTypeSelectorContainer: {
     position: 'absolute',
     left: 10,
     bottom: 0,
@@ -130,7 +127,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  overlay: {
+  Overlay: {
     // display: 'flex',
     position: 'absolute',
     // backgroundColor: 'transparent',
@@ -141,6 +138,11 @@ const styles = StyleSheet.create({
     bottom: 0,
     height: '100%',
     width: '100%',
+  },
+  Camera: {
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'green',
   },
 });
 
