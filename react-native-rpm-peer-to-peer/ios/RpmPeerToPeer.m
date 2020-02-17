@@ -25,12 +25,24 @@ RCT_EXPORT_METHOD(sampleMethod:(NSString *)stringArgument)
 //    // TODO: Implement some actually useful functionality
 //    callback(@[[NSString stringWithFormat: @"numberArgument: %@ stringArgument: %@", numberArgument, stringArgument]]);
 }
+RCT_EXPORT_METHOD(stopAdvertising){
+    [self.advertiser stopAdvertisingPeer];
+}
+RCT_EXPORT_METHOD(stopBrowsing){
+    [self.browser stopBrowsingForPeers];
+}
+RCT_EXPORT_METHOD(getName:(RCTResponseSenderBlock)callback)
+    {
+        callback(@[[NSNull null],[[UIDevice currentDevice] name],[[NSUUID UUID] UUIDString]]);
 
+    }
 RCT_EXPORT_METHOD(advertise:(NSString *)channel data:(NSDictionary *)data) {
+    
   self.advertiser =
   [[MCNearbyServiceAdvertiser alloc] initWithPeer:self.peerID discoveryInfo:data serviceType:channel];
   self.advertiser.delegate = self;
   [self.advertiser startAdvertisingPeer];
+   
 }
 
 RCT_EXPORT_METHOD(browse:(NSString *)channel)

@@ -1,3 +1,5 @@
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react-native/no-inline-styles */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -7,6 +9,8 @@
  */
 
 import React, {Component} from 'react';
+
+// Components
 import {
   SafeAreaView,
   StyleSheet,
@@ -18,183 +22,67 @@ import {
   Button,
   Alert,
   NativeEventEmitter,
+  Picker,
 } from 'react-native';
+import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
 
 import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+  Button as BaseButton,
+  Text as BaseText,
+  Icon as BaseIcon,
+  Fab as BaseFab,
+} from 'native-base';
 
-const {RpmPeerToPeer} = NativeModules;
-const EvntEmitter = new NativeEventEmitter(RpmPeerToPeer);
+// My Components
+import P2PTest from './P2PTest';
+import CameraUI from './CameraUI';
 
-const subTestEvent = EvntEmitter.addListener('TestEvent', reminder => {
-  console.log(reminder.event);
-});
-const subDataRecieved = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityDataReceived',
-  body => {
-    console.log(body);
-  },
-);
-const subPeerDisconnect = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityPeerDisconnected',
-  body => {
-    console.log(body);
-  },
-);
-const subPeerConnecting = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityPeerConnecting',
-  body => {
-    console.log(body);
-  },
-);
-const subPeerConnected = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityPeerConnected',
-  body => {
-    console.log(body);
-  },
-);
-const subInviteRecieved = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityInviteReceived',
-  body => {
-    console.log(body);
-  },
-);
-const subPeerLost = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityPeerLost',
-  body => {
-    console.log(body);
-  },
-);
-const subPeerFound = EvntEmitter.addListener(
-  'RCTMultipeerConnectivityPeerFound',
-  body => {
-    console.log(body);
-  },
-);
+//Routing and navigation
+import 'react-native-gesture-handler';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+
+const Stack = createStackNavigator();
 
 class App extends Component {
   state = {
     counter: 0,
+    deviceName: null,
+    deviceID: null,
+    isAdvertizing: false,
+    isBrowsing: false,
+    invitations: [],
+    pickerValue: 'none',
+    colors: [
+      'blue',
+      'red',
+      'yellow',
+      'orange',
+      'green',
+      'purple',
+      'black',
+      'beige',
+      'brown',
+      'Crimson',
+    ],
+    setColor: 'blue',
+    isConnected: false,
+    peer: {},
   };
-  componentDidMount() {
-    RpmPeerToPeer.advertise('test', {data: 'hi'});
-  }
-  componentWillUnmount() {
-    subTestEvent.remove();
-    subDataRecieved.remove();
-    subInviteRecieved.remove();
-    subPeerConnected.remove();
-    subPeerConnecting.remove();
-    subPeerDisconnect.remove();
-    subPeerFound.remove();
-    subPeerLost.remove();
-  }
-  increment = () => {
-    this.setState({
-      counter: this.state.counter + 1,
-    });
-  };
+
   render() {
-    const counter = this.state.counter;
     return (
       <>
-        <StatusBar barStyle="dark-content" />
-        <SafeAreaView>
-          <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-            style={styles.scrollView}>
-            <Header />
-            {global.HermesInternal == null ? null : (
-              <View style={styles.engine}>
-                <Text style={styles.footer}>Engine: Hermes</Text>
-              </View>
-            )}
-            <View style={styles.body}>
-              <View style={styles.sectionContainer}>
-                <Button
-                  title="Advertise"
-                  onPress={() => {
-                    // Alert.alert('whoa');
-                    RpmPeerToPeer.browse('test');
-                    RpmPeerToPeer.sampleMethod('Test Notif');
-                    // this.increment();
-                  }}
-                />
-                <Text>{counter}</Text>
-                <Text style={styles.sectionTitle}>Step One</Text>
-                <Text style={styles.sectionDescription}>
-                  Edit <Text style={styles.highlight}>App.js</Text> to change
-                  this screen and then come back to see your edits.
-                </Text>
-              </View>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>See Your Changes</Text>
-                <Text style={styles.sectionDescription}>
-                  <ReloadInstructions />
-                </Text>
-              </View>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Debug</Text>
-                <Text style={styles.sectionDescription}>
-                  <DebugInstructions />
-                </Text>
-              </View>
-              <View style={styles.sectionContainer}>
-                <Text style={styles.sectionTitle}>Learn More</Text>
-                <Text style={styles.sectionDescription}>
-                  Read the docs to discover what to do next:
-                </Text>
-              </View>
-              <LearnMoreLinks />
-            </View>
-          </ScrollView>
-        </SafeAreaView>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="CameraUI">
+            <Stack.Screen name="CameraUI" component={CameraUI} />
+            <Stack.Screen name="P2PTest" component={P2PTest} />
+          </Stack.Navigator>
+        </NavigationContainer>
       </>
     );
   }
 }
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
+const styles = StyleSheet.create({});
 
 export default App;
