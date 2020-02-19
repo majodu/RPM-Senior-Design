@@ -5,6 +5,7 @@ add to the devDependencies`"react-native-rpm-peer-to-peer": "1.0.0"`
 cd back to the root and run `yarn link "react-native-rpm-peer-to-peer"`
 run `npm install`
 run `npx react-native link`
+You might need to remove duplicated font imports from the Build Phases/Copy Bundle Resources
 cd to ios and run `pod install`
 cd to root
 run IOS simulator "npx react-native run-ios"

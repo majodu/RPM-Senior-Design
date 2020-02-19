@@ -20,41 +20,79 @@ import {
   Fab as BaseFab,
 } from 'native-base';
 
+// Check camera permissions
+import {check, request, PERMISSIONS, RESULTS} from 'react-native-permissions';
+
 //Camera Stuff
 import {RNCamera} from 'react-native-camera';
 
-//Routing and navigation
-import 'react-native-gesture-handler';
+// Temporary use for camera roll access over  rnfs
+import CameraRoll from '@react-native-community/cameraroll';
+
+// React File System
+import RNFS from 'react-native-fs';
+
+// IOS ALBUM NAME
+const albumName = 'RPM Bodycam';
+// const dirPicutures = `${RNFS.ExternalStorageDirectoryPath}/Pictures`;
 
 class CameraUI extends Component {
   state = {
-    counter: 0,
-    deviceName: null,
-    deviceID: null,
-    isAdvertizing: false,
-    isBrowsing: false,
-    invitations: [],
-    pickerValue: 'none',
-    colors: [
-      'blue',
-      'red',
-      'yellow',
-      'orange',
-      'green',
-      'purple',
-      'black',
-      'beige',
-      'brown',
-      'Crimson',
-    ],
-    setColor: 'blue',
-    isConnected: false,
-    peer: {},
+    recordOptions: {
+      quality: RNCamera.Constants.VideoQuality['480p'],
+      codec: RNCamera.Constants.VideoCodec.H264,
+      maxDuration: 5,
+    },
+  };
+  saveFile = uri => {
+    const albumPath = `${RNFS.PicturesDirectoryPath}/${albumName}`;
+
+    const filePathInAlbum = `${albumPath}/testing.mov`;
+
+    return RNFS.mkdir(albumPath)
+      .then(() => {
+        RNFS.copyFile(uri, filePathInAlbum)
+          // Next step to show album without the need to re-boot your device:
+          .then(() => RNFS.scanFile(filePathInAlbum))
+          .then(data => {
+            console.log(data);
+            console.log('File Saved Successfully!');
+          });
+      })
+      .catch(error => {
+        console.log('Could not create dir', error);
+      });
+  };
+  recordVideo = async () => {
+    if (this.camera) {
+      const data = await this.camera.recordAsync(this.state.recordOptions);
+
+      let saved = CameraRoll.saveToCameraRoll(data.uri);
+      saved
+        .then(function(result) {
+          console.log('save succeeded ' + result);
+        })
+        .catch(function(error) {
+          console.log('save failed ' + error);
+        });
+      console.log('getting video Hash...');
+      RNFS.hash(data.uri, 'sha512').then(result => console.log(result));
+    }
   };
   constructor(props) {
     super(props);
   }
-
+  deleteFile(filename) {
+    const filepath = `${dirPicutures}/${filename}`;
+    RNFS.unlink(filepath)
+      .then(() => {
+        console.log('FILE DELETED');
+      })
+      // `unlink` will throw an error, if the item to unlink does not exist
+      .catch(err => {
+        console.log(err.message);
+      });
+  }
   render() {
     return (
       <>
@@ -80,7 +118,39 @@ class CameraUI extends Component {
                 position="bottomRight"
                 onPress={() => this.setState({active: !this.state.active})}>
                 <BaseIcon name="share" />
-                <BaseButton style={{backgroundColor: '#34A34F'}}>
+                <BaseButton
+                  onPress={() => {
+                    check(PERMISSIONS.IOS.PHOTO_LIBRARY).then(result => {
+                      switch (result) {
+                        case RESULTS.UNAVAILABLE:
+                          console.log(
+                            'This feature is not available (on this device / in this context)',
+                          );
+                          break;
+                        case RESULTS.DENIED:
+                          console.log(
+                            'The permission has not been requested / is denied but requestable',
+                          );
+                          request(PERMISSIONS.IOS.PHOTO_LIBRARY).then(result =>
+                            console.log(result),
+                          );
+                          break;
+                        case RESULTS.GRANTED:
+                          console.log('The permission is granted');
+                          this.recordVideo();
+                          //   CameraRoll.getPhotos({first: 1}).then(resp => {
+                          //     console.log(resp.edges.length);
+                          //   });
+                          break;
+                        case RESULTS.BLOCKED:
+                          console.log(
+                            'The permission is denied and not requestable anymore',
+                          );
+                          break;
+                      }
+                    });
+                  }}
+                  style={{backgroundColor: '#34A34F'}}>
                   <BaseIcon name="logo-whatsapp" />
                 </BaseButton>
                 <BaseButton style={{backgroundColor: '#3B5998'}}>
