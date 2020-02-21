@@ -33,7 +33,7 @@ RCT_EXPORT_METHOD(stopBrowsing){
 }
 RCT_EXPORT_METHOD(getName:(RCTResponseSenderBlock)callback)
     {
-        callback(@[[NSNull null],[[UIDevice currentDevice] name],[[NSUUID UUID] UUIDString]]);
+        callback(@[[NSNull null],[[UIDevice currentDevice] name],[self.peerID displayName]]);
 
     }
 RCT_EXPORT_METHOD(advertise:(NSString *)channel data:(NSDictionary *)data) {

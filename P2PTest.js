@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react-native/no-inline-styles */
 
@@ -43,6 +44,7 @@ const subTestEvent = EvntEmitter.addListener('TestEvent', reminder => {
 const subPeerDisconnect = EvntEmitter.addListener(
   'RCTMultipeerConnectivityPeerDisconnected',
   body => {
+    console.log('peer disconnected');
     console.log(body);
   },
 );
@@ -64,12 +66,14 @@ const subInviteRecieved = EvntEmitter.addListener(
 const subPeerLost = EvntEmitter.addListener(
   'RCTMultipeerConnectivityPeerLost',
   body => {
+    console.log('connection to peer lost');
     console.log(body);
   },
 );
 const subPeerFound2 = EvntEmitter.addListener(
   'RCTMultipeerConnectivityPeerFound',
   body => {
+    console.log('peer found');
     console.log(body);
   },
 );
@@ -106,8 +110,10 @@ class P2PTest extends Component {
     'RCTMultipeerConnectivityDataReceived',
     body => {
       console.log('data recieved');
+      console.log(body);
+      console.log(body.data.body.color);
       this.setState({
-        setColor: body.color,
+        setColor: body.data.body.color,
       });
     },
   );
@@ -129,9 +135,9 @@ class P2PTest extends Component {
       //   console.log(body);
       //   console.log(`this is the old state ${this.state.invitations}`);
       let newState = [...this.state.invitations, body.peer];
-      //   console.log(
-      // `the new state is ${newState} and the length is ${newState.length}`,
-      //   );
+      console.log(
+        `the new state is ${newState} and the length is ${newState.length}`,
+      );
       if (Array.isArray(newState)) {
         this.setState({
           invitations: newState,
@@ -153,6 +159,7 @@ class P2PTest extends Component {
     this.subDataRecieved.remove();
     this.subPeerConnected.remove();
     this.subPeerFound.remove();
+    this.subInviteRecieved.remove();
   }
   increment = () => {
     this.setState({
@@ -193,11 +200,31 @@ class P2PTest extends Component {
       });
     }
   }
+  subInviteRecieved = EvntEmitter.addListener(
+    'RCTMultipeerConnectivityInviteReceived',
+    body => {
+      console.log('invite recieved');
+      console.log(body);
+      RpmPeerToPeer.rsvp(body.invite.id, true, response =>
+        console.log('invitation accepted'),
+      );
+    },
+  );
 
   render() {
     const counter = this.state.counter;
+
     const listItems = this.state.invitations.map(peer => (
-      <Picker.Item key={peer.id} label={peer.id} value={peer.id} />
+      <BaseButton
+        key={peer.id}
+        onPress={() => {
+          console.log('Invite button pressed');
+          RpmPeerToPeer.invite(peer.id, response => console.log('invite sent'));
+        }}>
+        <BaseText label={peer.id} value={peer.id}>
+          {peer.id}
+        </BaseText>
+      </BaseButton>
     ));
     return (
       <>
@@ -238,11 +265,16 @@ class P2PTest extends Component {
                     this.startBrowsing();
                   }}
                 />
+
                 <Button
                   title="Stop"
                   onPress={() => {
                     this.stopAdvertizing();
                     this.stopBrowsing();
+                    RpmPeerToPeer.disconnect(() => {});
+                    this.setState({
+                      invitations: [],
+                    });
                   }}
                 />
                 <Button
@@ -252,33 +284,25 @@ class P2PTest extends Component {
                       Math.floor(Math.random() * this.state.colors.length)
                     ];
                     if (this.state.isConnected) {
-                      RpmPeerToPeer.sendData([this.state.peer], {
-                        body: {
-                          color: newColor,
+                      RpmPeerToPeer.send(
+                        [this.state.peer],
+                        {
+                          // eslint-disable-next-line prettier/prettier
+                          body: {
+                            // eslint-disable-next-line prettier/prettier
+                            color: `${newColor}`,
+                          },
                         },
-                      });
+                        response => console.log(response),
+                      );
                     }
                     this.setState({
                       setColor: newColor,
                     });
                   }}
                 />
-                {this.state.isBrowsing && (
-                  <Picker
-                    selectedValue={this.state.pickerValue}
-                    style={{height: 50, width: 100}}
-                    onValueChange={(itemValue, itemIndex) => {
-                      this.setState({pickerValue: itemValue});
-                      if (itemValue !== 'none') {
-                        RpmPeerToPeer.invite(itemValue, returned =>
-                          console.log('function returned'),
-                        );
-                      }
-                    }}>
-                    <Picker.Item key="none" label="None" value="none" />
-                    {listItems}
-                  </Picker>
-                )}
+
+                {this.state.isBrowsing && <ScrollView>{listItems}</ScrollView>}
                 <View
                   style={{
                     height: 100,
