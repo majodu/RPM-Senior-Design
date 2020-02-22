@@ -7,11 +7,12 @@ export default function reducer(state = {}, action = {}) {
     case SET:
       // Perform action
       return state;
-    default: return state;
+    default:
+      return state;
   }
 }
 
 // Action Creators
 export function set() {
-  return { type: SET };
+  return {type: SET};
 }
