@@ -10,6 +10,12 @@
 
 import React, {Component} from 'react';
 
+//Redux and Redux Persist
+import {Provider} from 'react-redux';
+// import {PersistGate} from 'redux-persist/lib/integration/react';
+
+//store
+import {store} from '../src/redux/configureStore';
 // Components
 import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
 import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
@@ -29,12 +35,14 @@ class App extends Component {
   render() {
     return (
       <>
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="CameraUI">
-            <Stack.Screen name="CameraUI" component={CameraUI} />
-            <Stack.Screen name="P2PTest" component={P2PTest} />
-          </Stack.Navigator>
-        </NavigationContainer>
+        <Provider store={store}>
+          <NavigationContainer>
+            <Stack.Navigator initialRouteName="CameraUI">
+              <Stack.Screen name="CameraUI" component={CameraUI} />
+              <Stack.Screen name="P2PTest" component={P2PTest} />
+            </Stack.Navigator>
+          </NavigationContainer>
+        </Provider>
       </>
     );
   }

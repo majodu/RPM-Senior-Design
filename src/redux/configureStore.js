@@ -1,19 +1,29 @@
 import {createStore, applyMiddleware, combineReducers} from 'redux';
-import createLogger from 'redux-logger';
+//redux persist
+import {persistStore, persistReducer} from 'redux-persist';
+import AsyncStorage from '@react-native-community/async-storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+
+import FSStorage from 'redux-persist-fs-storage';
+
+import logger from 'redux-logger';
 import todo from './modules/todo';
-import p2p from './modules/P2P';
 
-const loggerMiddleware = createLogger(); // initialize logger
+const persistConfig = {
+  key: 'root',
+  keyPrefix: '',
+  storage: FSStorage(),
+  stateReconciler: autoMergeLevel2, // see "Merge Process" section for details.
+};
 
-const createStoreWithMiddleware = applyMiddleware(loggerMiddleware)(
-  createStore,
-); // apply logger to redux
+// const createStoreWithMiddleware = applyMiddleware(loggerMiddleware)(createStore,); // apply logger to redux
 
-const reducer = combineReducers({
+const rootReducer = combineReducers({
   todo,
-  p2p,
 });
 
-const configureStore = initialState =>
-  createStoreWithMiddleware(reducer, initialState);
-export default configureStore;
+const pReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(pReducer, {}, applyMiddleware(logger));
+export const persistor = persistStore(store);
+// export default store;
