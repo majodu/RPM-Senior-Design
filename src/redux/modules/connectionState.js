@@ -39,7 +39,7 @@ export default function reducer(state = initialState, action = {}) {
 // ACTION CREATORS
 export function setDataMode(mode) {
   if (mode < 1 && mode > 3) {
-    console.log('I DID NOTHING');
+    ('I DID NOTHING');
     return {type: DONOTHING};
   }
   return {type: SETDATAMODE, mode: mode};
@@ -47,7 +47,7 @@ export function setDataMode(mode) {
 
 export function setConnectionMode(mode) {
   if (mode < 4 && mode > 6) {
-    console.log('I DID NOTHING');
+    ('I DID NOTHING');
     return {type: DONOTHING};
   }
   return {type: SETCONNECTIONMODE, mode: mode};
