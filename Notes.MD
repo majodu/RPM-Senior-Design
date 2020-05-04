@@ -26,10 +26,10 @@ MetaData format
 {
 Hash: 'sha...'
 //Recording
+DeviceID: 'DeviceID',
 StartTime: 'Serialized DateObject'
 EndTime: 'Serialized DateObject'
+
 }
 
 ```
-
-The Ser

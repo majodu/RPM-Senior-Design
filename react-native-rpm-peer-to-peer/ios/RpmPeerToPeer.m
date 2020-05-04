@@ -22,8 +22,7 @@ RCT_EXPORT_METHOD(sampleMethod:(NSString *)stringArgument)
                        body:@{
         @"event":stringArgument
     }];
-//    // TODO: Implement some actually useful functionality
-//    callback(@[[NSString stringWithFormat: @"numberArgument: %@ stringArgument: %@", numberArgument, stringArgument]]);
+
 }
 RCT_EXPORT_METHOD(stopAdvertising){
     [self.advertiser stopAdvertisingPeer];

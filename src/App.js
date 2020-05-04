@@ -21,25 +21,31 @@ import {SafeAreaView, StyleSheet, ScrollView, View, Text} from 'react-native';
 import {Header, Colors} from 'react-native/Libraries/NewAppScreen';
 
 // My Components
-import P2PTest from './P2PTest';
+// import P2PTest from './P2PTest';
 import CameraUI from './CameraUI';
+import IDUpload from './IDUpload';
 
 //Routing and navigation
 import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
+import NetworkManager from './NetworkManager';
+import FQueueManager from './FQueueManager';
 const Stack = createStackNavigator();
 
+console.disableYellowBox = true;
+// <FQueueManager />
 class App extends Component {
   render() {
     return (
       <>
         <Provider store={store}>
+          <NetworkManager />
+          <FQueueManager />
           <NavigationContainer>
-            <Stack.Navigator initialRouteName="CameraUI">
-              <Stack.Screen name="CameraUI" component={CameraUI} />
-              <Stack.Screen name="P2PTest" component={P2PTest} />
+            <Stack.Navigator initialRouteName="Camera View">
+              <Stack.Screen name="Certificate Entry" component={IDUpload} />
+              <Stack.Screen name="Camera View" component={CameraUI} />
             </Stack.Navigator>
           </NavigationContainer>
         </Provider>
