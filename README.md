@@ -32,7 +32,7 @@ cd to ios and run `pod install`
 cd to root
 run IOS simulator "npx react-native run-ios"
 
-To run the server, you may need to move it to a different folder so it doesnt inherit node_modules from the parent directory. Do
+To run the server, clone from `https://github.com/majodu/rpm-bodycam-server` 
 
 `npm install`
 
