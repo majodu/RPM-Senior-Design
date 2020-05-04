@@ -30,6 +30,11 @@
 		<true/>
 		<key>NSExceptionDomains</key>
 		<dict>
+			<key>192.168.1.179</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
 			<key>localhost</key>
 			<dict>
 				<key>NSExceptionAllowsInsecureHTTPLoads</key>
@@ -53,5 +58,21 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto_medium.ttf</string>
+		<string>Roboto.ttf</string>
+		<string>rubicon-icon-font.ttf</string>
+	</array>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Permission to keep Bluetooth on</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Permission to use Bluetooth</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Permission to use Camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Permission to use Microphone</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Permission to store video in PhotoLibrary</string>
 </dict>
 </plist>

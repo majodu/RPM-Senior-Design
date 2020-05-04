@@ -51,9 +51,12 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
-
+*.tff
 # Bundle artifact
 *.jsbundle
 
 # CocoaPods
 /ios/Pods/
+
+#battlecry templates
+/battlecry
