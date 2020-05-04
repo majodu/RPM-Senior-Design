@@ -31,3 +31,11 @@ You might need to remove duplicated font imports from the Build Phases/Copy Bund
 cd to ios and run `pod install`
 cd to root
 run IOS simulator "npx react-native run-ios"
+
+To run the server, you may need to move it to a different folder so it doesnt inherit node_modules from the parent directory. Do
+
+`npm install`
+
+and then
+
+`nodemon server.js -w server.js`
